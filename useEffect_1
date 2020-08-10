@@ -1,0 +1,18 @@
+import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
+
+const App = () => {
+  const Hello_React = () => console.log("안녕 리엑트")
+  const [number, setNumber] = useState(0);
+  const [anumber, setaNumber] = useState(0);
+  useEffect(Hello_React, [number]);
+  return (
+    <div className="App">
+      <button onClick={() => setNumber(number + 1)}>{number}</button>
+      <button onClick={() => setaNumber(anumber - 1)}>{anumber}</button>
+    </div>
+  );
+};
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
